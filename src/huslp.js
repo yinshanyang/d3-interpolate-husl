@@ -21,7 +21,23 @@ function toHusl(format) {
   var r = 0,
     g = 0,
     b = 0,
-    color;
+    color,
+    m1,
+    m2;
+
+  m1 = /([a-z]+)\((.*)\)/i.exec(format);
+  if (m1) {
+    m2 = m1[2].split(',');
+    if (m1[1] === 'hsl') {
+      return [
+        parseFloat(m2[0]),
+        parseFloat(m2[1]),
+        parseFloat(m2[2])
+      ];
+    }
+  }
+
+
   if (format != null && format.charAt(0) === '#' && !isNaN(color = parseInt(format.slice(1), 16))) {
     if (format.length === 4) {
       r = (color & 0xf00) >> 4; r = (r >> 4) | r;
