@@ -1,6 +1,6 @@
 {
   "name": "d3-interpolate-husl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "./lib",
   "scripts": {
@@ -9,7 +9,7 @@
     "compile:browser": "npm run build:browser && npm run minify:browser",
     "build:browser": "echo 'build browser'",
     "minify:browser": "echo 'minify the shit'",
-    "prepublish": "npm run compile:npm",    
+    "prepublish": "npm run compile:npm",
     "test": "node --harmony ./node_modules/.bin/jest --verbose"
   },
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
