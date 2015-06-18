@@ -7,10 +7,17 @@
     "compile": "npm run compile:npm && npm run compile:browser",
     "compile:npm": "./node_modules/.bin/babel -d lib/ src/ && rm -r ./lib/__tests__",
     "compile:browser": "npm run build:browser && npm run minify:browser",
-    "build:browser": "echo 'build browser'",
-    "minify:browser": "echo 'minify the shit'",
+    "build:browser": "./node_modules/.bin/browserify src/ -o d3-interpolate-husl.js",
+    "minify:browser": "./node_modules/.bin/uglifyjs d3-interpolate-husl.js -o d3-interpolate-husl.min.js",
     "prepublish": "npm run compile:npm",
     "test": "node --harmony ./node_modules/.bin/jest --verbose"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify"
+      ]
+    ]
   },
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
   "license": "MIT",
@@ -25,8 +32,11 @@
     "babel": "^5.5.8",
     "babel-core": "^5.5.8",
     "babel-eslint": "^3.1.15",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
     "eslint": "^0.23.0",
-    "jest-cli": "^0.4.13"
+    "jest-cli": "^0.4.13",
+    "uglify": "^0.1.5"
   },
   "jest": {
     "rootDir": "src",
