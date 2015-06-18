@@ -1,0 +1,25 @@
+{
+  "name": "d3-interpolate-husl",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./src",
+  "scripts": {
+    "test": "node --harmony ./node_modules/.bin/jest --verbose"
+  },
+  "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
+  "license": "ISC",
+  "es6": true,
+  "dependencies": {
+    "husl": "^5.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.5.8",
+    "babel-eslint": "^3.1.15",
+    "eslint": "^0.23.0",
+    "jest-cli": "^0.4.13"
+  },
+  "jest": {
+    "rootDir": "src",
+    "scriptPreprocessor": "<rootDir>../tools/preprocessor.js"
+  }
+}
